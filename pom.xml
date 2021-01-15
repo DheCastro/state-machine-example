@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.dhecastro</groupId>
-	<artifactId>account-state-machine</artifactId>
+	<artifactId>state-machine-example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>account-state-machine</name>
+	<name>state-machine-example</name>
 	<description>State machine example</description>
 
 	<properties>

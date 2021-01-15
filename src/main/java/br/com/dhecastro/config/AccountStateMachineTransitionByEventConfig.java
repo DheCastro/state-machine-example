@@ -50,6 +50,11 @@ public class AccountStateMachineTransitionByEventConfig
 				.source(AccountStates.CREATED).target(AccountStates.ANALYSIS)
 				.event(AccountEvents.ACCOUNT_SUBMITTED)
 				.and().withExternal()
+				//Condição de guarda configurada
+				//É uma condição na qual a transição de estado depende dela para acontecer
+				//No caso do exemplo, a condição para que o estado mude de ANALYSIS
+				//para APPROVED, é que a data atual seja um dia útil
+				//A verificaçaõ é feita através do método "onlyWorkingDays"
 				.source(AccountStates.ANALYSIS).target(AccountStates.APPROVED)
 	               .event(AccountEvents.ACCOUNT_ANALYZED)
 	               .guard(onlyWorkingDays())

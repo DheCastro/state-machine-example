@@ -38,6 +38,11 @@ public class AccountStateMachineApplication implements CommandLineRunner {
 			@Override
 			public MessageHeaders getHeaders() {
 				final Map<String, Object> params = new HashMap<>();
+				//Se setar uma data que não seja dia útil, a máquina de estados
+				//vai apenas até o estado de análise, por conta da
+				//condição de guarda
+				//Modifique a data abaixo para dia 9 (sábado), execute
+				//e verifique a saída no console
 				final LocalDate saturday = LocalDate.of(2021, 1, 8);
 				params.put("day", saturday);
 				return new MessageHeaders(params);
